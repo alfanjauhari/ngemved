@@ -1,15 +1,25 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import styled from 'styled-components';
+import { Button, Header, Hero } from '@comps/index';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const StyledMain = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  flex-grow: 1;
+`;
 
-export default IndexPage
+export default function Home() {
+  return (
+    <>
+      <Header>
+        <Hero />
+      </Header>
+      <StyledMain>
+        <Button variant="outline" size="lg">
+          Hello World
+        </Button>
+      </StyledMain>
+    </>
+  );
+}
