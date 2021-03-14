@@ -25,7 +25,7 @@ export const buttonStyles: ButtonStyle = {
         backgroundColor: '#22073a'
       },
       transitionDuration: '.5s',
-      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px'
+      boxShadow: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;'
     },
     secondary: {
       backgroundColor: '#FF4C0C',
@@ -33,7 +33,7 @@ export const buttonStyles: ButtonStyle = {
         backgroundColor: '#cc3d0a'
       },
       transitionDuration: '.5s',
-      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px'
+      boxShadow: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;'
     },
     outline: {
       border: '1px solid #FF4C0C',
@@ -56,12 +56,15 @@ export const buttonStyles: ButtonStyle = {
     },
     lg: {
       padding: '1rem 2rem',
-      fontSize: '1.20rem'
+      fontSize: '1rem'
     }
   }
 };
 
 export const StyledButton = styled('button')<ButtonProps>(
+  {
+    borderRadius: '5px'
+  },
   ({ variant = 'primary', size = 'md' }) => ({
     ...buttonStyles.variants[variant],
     ...buttonStyles.size[size]

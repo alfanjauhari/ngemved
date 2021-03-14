@@ -1,49 +1,30 @@
-import Document, {
-  DocumentContext,
-  Html,
-  Head,
-  Main,
-  NextScript
-} from 'next/document';
+import Document, { DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { RenderPageResult } from 'next/dist/next-server/lib/utils';
 
-type Props = {
-  page: RenderPageResult | Promise<RenderPageResult>;
-  styleTags: any;
-};
-
-export default class NgemvedDocument extends Document<Props> {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
 
-    const page = ctx.renderPage((App) => (props) =>
-      sheet.collectStyles(<App {...props} />)
-    );
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />)
+        });
 
-    const styleTags = sheet.getStyleElement();
-
-    return { ...page, styleTags };
-  }
-
-  render() {
-    return (
-      <Html lang="id">
-        <Head>
-          <link
-            rel="preload"
-            href="/fonts/Inter.var.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          {this.props.styleTags}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        )
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 }

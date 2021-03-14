@@ -140,4 +140,8 @@ video {
   max-width: 100%;
   height: auto;
 }
+
+p {
+  line-height: 1.6;
+}
 `;
