@@ -380,7 +380,7 @@ export default function Home() {
         </StyledClient>
         <StyledAbout>
           <div className="left-container">
-            <img src="/images/girl.png" />
+            <img src="/images/girl.png" alt="Girl Image" />
             <div>
               <h1>950K++</h1>
               <p>Reguler Customer</p>
@@ -455,7 +455,7 @@ export default function Home() {
             </motion.div>
           </div>
           <div className="right-container">
-            <img src="/images/people.png" />
+            <img src="/images/people.png" alt="Working People" />
           </div>
         </StyledInfo>
         <StyledWhy>
@@ -544,7 +544,10 @@ export default function Home() {
         </StyledWhy>
         <StyledDownload>
           <div className="left-container">
-            <img src="/images/people-with-laptop.png" />
+            <img
+              src="/images/people-with-laptop.png"
+              alt="People with Laptop"
+            />
           </div>
           <div className="right-container">
             <h1>

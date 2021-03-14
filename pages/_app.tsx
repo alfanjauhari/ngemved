@@ -14,6 +14,8 @@ export default function NgemvedApp({ Component, pageProps }: AppProps) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <title>Ngemved.id</title>
+        <meta name="description" content="Save Money With ngemved.id" />
       </Head>
       <Component {...pageProps} />
     </NgemvedPropvider>
