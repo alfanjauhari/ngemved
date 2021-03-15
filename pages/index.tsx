@@ -433,26 +433,26 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Imperdiet
               augue at pulvinar quisque cum iaculis pharetra, elementum vel.
             </p>
-            <motion.div animate={{ x: 0 }} initial={{ x: '100vw' }}>
+            <div>
               <Icon icon="check" />
               <p>Lorem ipsum dolor sit amet, consectetur </p>
-            </motion.div>
-            <motion.div animate={{ x: 0 }} initial={{ x: '100vw' }}>
+            </div>
+            <div>
               <Icon icon="check" />
               <p>Lorem ipsum dolor sit amet, consectetur </p>
-            </motion.div>
-            <motion.div animate={{ x: 0 }} initial={{ x: '-100vw' }}>
+            </div>
+            <div>
               <Icon icon="check" />
               <p>Lorem ipsum dolor sit amet, consectetur </p>
-            </motion.div>
-            <motion.div animate={{ x: 0 }} initial={{ x: '100vw' }}>
+            </div>
+            <div>
               <Icon icon="check" />
               <p>Lorem ipsum dolor sit amet, consectetur </p>
-            </motion.div>
-            <motion.div animate={{ x: 0 }} initial={{ x: '-100vw' }}>
+            </div>
+            <div>
               <Icon icon="check" />
               <p>Lorem ipsum dolor sit amet, consectetur </p>
-            </motion.div>
+            </div>
           </div>
           <div className="right-container">
             <img src="/images/people.png" alt="Working People" />
