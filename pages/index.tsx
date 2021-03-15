@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Button, Header, Hero, Icon, Footer } from '@comps/index';
-import { motion } from 'framer-motion';
 
 const StyledMain = styled.main`
   flex-grow: 1;
